@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E0275679B9E240573ECF4C5 /* Pods_InstagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBD644887837E67F8244A6B /* Pods_InstagramUITests.framework */; };
 		5459F43A603C8CA8174AE4D0 /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB761BD5DC603D3E65DF80B4 /* Pods_Instagram.framework */; };
+		8632CEC91F03015200EEB91B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8632CEC81F03015200EEB91B /* LoginViewController.swift */; };
 		869AC34C1F02F8E4003A0B5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869AC34B1F02F8E4003A0B5E /* AppDelegate.swift */; };
 		869AC34E1F02F8E4003A0B5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869AC34D1F02F8E4003A0B5E /* ViewController.swift */; };
 		869AC3511F02F8E4003A0B5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 869AC34F1F02F8E4003A0B5E /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		29C95FD7572F0A22CEEF44B1 /* Pods-InstagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramTests/Pods-InstagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 		447F19CF85134A4E1577DD0D /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		56A848B41A932A105174DDCA /* Pods-InstagramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramUITests/Pods-InstagramUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8632CEC81F03015200EEB91B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		869AC3481F02F8E4003A0B5E /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		869AC34B1F02F8E4003A0B5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		869AC34D1F02F8E4003A0B5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				869AC34B1F02F8E4003A0B5E /* AppDelegate.swift */,
 				869AC34D1F02F8E4003A0B5E /* ViewController.swift */,
+				8632CEC81F03015200EEB91B /* LoginViewController.swift */,
 				869AC34F1F02F8E4003A0B5E /* Main.storyboard */,
 				869AC3521F02F8E4003A0B5E /* Assets.xcassets */,
 				869AC3541F02F8E4003A0B5E /* LaunchScreen.storyboard */,
@@ -446,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8632CEC91F03015200EEB91B /* LoginViewController.swift in Sources */,
 				869AC34E1F02F8E4003A0B5E /* ViewController.swift in Sources */,
 				869AC34C1F02F8E4003A0B5E /* AppDelegate.swift in Sources */,
 			);
@@ -698,6 +702,7 @@
 				869AC3721F02F8E4003A0B5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		869AC3731F02F8E4003A0B5E /* Build configuration list for PBXNativeTarget "InstagramTests" */ = {
 			isa = XCConfigurationList;
@@ -706,6 +711,7 @@
 				869AC3751F02F8E4003A0B5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		869AC3761F02F8E4003A0B5E /* Build configuration list for PBXNativeTarget "InstagramUITests" */ = {
 			isa = XCConfigurationList;
@@ -714,6 +720,7 @@
 				869AC3781F02F8E4003A0B5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
