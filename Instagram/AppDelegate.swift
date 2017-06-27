@@ -25,6 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://secret-bastion-61297.herokuapp.com/parse"
             })
         )
+        
+        // check if user is logged in.
+        if PFUser.current() != nil {
+            // if there is a logged in user then load the home view controller
+        }
    
         
         return true
