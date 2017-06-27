@@ -6,13 +6,10 @@ target 'Instagram' do
   use_frameworks!
 
   # Pods for Instagram
+pod 'Parse'
 
   target 'InstagramTests' do
     inherit! :search_paths
-
-pod 'Parse'
-
-
   # Pods for testing
   end
 

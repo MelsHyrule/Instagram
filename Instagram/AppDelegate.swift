@@ -21,11 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
                 configuration.applicationId = "Instagram"
-                configuration.clientKey = "sdfghjklkjhgfdfghvhfjyhvhjf"
-                configuration.server = "https://secret-bastion-61297.herokuapp.com/parse "
+                //configuration.clientKey = "sdfghjklkjhgfdfghvhfjyhvhjf"
+                configuration.server = "https://secret-bastion-61297.herokuapp.com/parse"
             })
         )
-  
+   
         
         return true
     }
