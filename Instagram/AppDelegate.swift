@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // check if user is logged in.
         if PFUser.current() != nil {
+            print ("Welcom back user")
             // if there is a logged in user then load the home view controller
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let chatViewController = storyboard.instantiateViewController(withIdentifier: "ChatViewController")

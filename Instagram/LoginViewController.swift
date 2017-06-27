@@ -36,8 +36,9 @@
      // Pass the selected object to the new view controller.
      }
      */
+    
+    
     @IBAction func onSignIn(_ sender: Any) {
-        
         PFUser.logInWithUsername(inBackground: usernameField.text!, password: passwordField.text!) { (user: PFUser?, error: Error?) in
             if user != nil {
                 print ("You're logged in")
@@ -46,7 +47,6 @@
                 //
             }
         }
-        
     }
     
     
@@ -60,19 +60,15 @@
         newUser.signUpInBackground { (success: Bool, error: Error?) in
             if let error = error {
                 print(error.localizedDescription)
-                
                 /*
                 if (error["code"] == 202) {
                     print ("Username is taken")
                 }*/
-  
             } else {
                 print ("User added")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
-                
             }
         }
-        
     }
     
  }

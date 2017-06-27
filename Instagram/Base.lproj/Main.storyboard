@@ -119,10 +119,10 @@
             </objects>
             <point key="canvasLocation" x="2850" y="553.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="Ni2-4Y-Qkx">
             <objects>
-                <viewController id="HtX-Gq-yNX" sceneMemberID="viewController">
+                <viewController id="HtX-Gq-yNX" customClass="ProfileViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TNg-fs-KW4"/>
                         <viewControllerLayoutGuide type="bottom" id="SW7-5N-b5N"/>
@@ -130,6 +130,16 @@
                     <view key="view" contentMode="scaleToFill" id="Miz-02-bcE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Qs-w7-kfP">
+                                <rect key="frame" x="157" y="465" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="onSignOut:" destination="HtX-Gq-yNX" eventType="touchUpInside" id="Yo4-mE-mpd"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.5" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Lvh-WE-VBk"/>
