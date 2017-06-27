@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://secret-bastion-61297.herokuapp.com/parse "
             })
         )
- 
+  
         
         return true
     }
