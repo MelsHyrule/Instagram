@@ -100,10 +100,10 @@
             </objects>
             <point key="canvasLocation" x="2850.4000000000001" y="-156.97151424287858"/>
         </scene>
-        <!--View Controller-->
+        <!--Photo Map View Controller-->
         <scene sceneID="pW2-TP-Ob3">
             <objects>
-                <viewController id="ng5-nQ-DQe" sceneMemberID="viewController">
+                <viewController id="ng5-nQ-DQe" customClass="PhotoMapViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="93z-kp-mf2"/>
                         <viewControllerLayoutGuide type="bottom" id="YNp-cn-BfW"/>
@@ -111,13 +111,38 @@
                     <view key="view" contentMode="scaleToFill" id="RBj-gI-ZX0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0PI-vj-Mm9">
+                                <rect key="frame" x="67" y="107" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzO-P9-pra">
+                                <rect key="frame" x="167" y="318" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="onSharePressed:" destination="ng5-nQ-DQe" eventType="touchUpInside" id="L62-Dl-hfp"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W9j-m2-IiB">
+                                <rect key="frame" x="139" y="394" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="ChS-ip-VoO"/>
+                    <connections>
+                        <outlet property="myPic" destination="0PI-vj-Mm9" id="iqu-4N-Pyd"/>
+                        <outlet property="myPicCaption" destination="W9j-m2-IiB" id="10k-DX-9r7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NPd-rA-fod" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2850" y="553.75"/>
+            <point key="canvasLocation" x="2848.8000000000002" y="553.67316341829087"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="Ni2-4Y-Qkx">
@@ -154,6 +179,7 @@
                 <tabBarController storyboardIdentifier="ChatViewController" automaticallyAdjustsScrollViewInsets="NO" id="Hgt-Hy-Ocm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="WD8-xD-yQZ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
