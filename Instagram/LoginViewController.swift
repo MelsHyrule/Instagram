@@ -14,7 +14,6 @@
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,4 +70,7 @@
         }
     }
     
+    @IBAction func tapGesture(_ sender: Any) {
+        view.endEditing(true)
+    }
  }

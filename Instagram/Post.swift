@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import ParseUI
 
 class Post: NSObject {
     /**
@@ -39,7 +40,10 @@ class Post: NSObject {
             //
             completion?(success, error)
         }
+        
     }
+    
+    
     
     /**
      Method to convert UIImage to PFFile

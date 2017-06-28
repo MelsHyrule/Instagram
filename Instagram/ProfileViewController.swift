@@ -33,20 +33,13 @@ class ProfileViewController: UIViewController {
      }
      */
     
-    @IBAction func onSignOut(_ sender: Any) {           //If option for sign out available, no chache sign in happens
-        /*
+    @IBAction func onSignOut(_ sender: Any) {
         PFUser.logOutInBackground { (error: Error?) in
             // PFUser.currentUser() will now be nil
             print("User signed out")
-            
             //TODO: once user is signed out, go back to loging screen...
-            self.dismiss(animated: true, completion: {
-            })
-            self.dismiss(animated: true, completion: {
-            })
-            //so nice u run it twice (also its so u dismiss the tab and nav bar
+            self.performSegue(withIdentifier: "logoutSegue", sender:  nil)
         }
-        */
         
     }
 }
