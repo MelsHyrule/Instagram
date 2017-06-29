@@ -8,6 +8,8 @@
 
 import UIKit
 import Parse
+import ParseUI
+import AVFoundation
 
 class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -22,7 +24,7 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        resize(image: myPicImage, newSize: CGSize(width: 375, height: 375))
+        resizeImage(image: myPicImage, targetSize: CGSize(width: 375, height: 375))
         myPic.image = myPicImage
         
     }
@@ -62,7 +64,7 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBAction func onCancelPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
+/*
     func resize(image: UIImage, newSize: CGSize) -> UIImage {
         let resizeImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
         resizeImageView.contentMode = UIViewContentMode.scaleAspectFill
@@ -74,7 +76,22 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
         UIGraphicsEndImageContext()
         return newImage!
     }
-
+*/
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let targetRect = CGRect(origin: CGPoint.zero, size: targetSize)
+        let rect = AVMakeRect(aspectRatio: image.size, insideRect: targetRect)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsGetCurrentContext()?.interpolationQuality = .high
+        UIGraphicsBeginImageContextWithOptions(targetSize, false, 0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
     
     
 }

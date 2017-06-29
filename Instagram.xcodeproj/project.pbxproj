@@ -19,7 +19,8 @@
 		869AC3611F02F8E4003A0B5E /* InstagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869AC3601F02F8E4003A0B5E /* InstagramTests.swift */; };
 		869AC36C1F02F8E4003A0B5E /* InstagramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869AC36B1F02F8E4003A0B5E /* InstagramUITests.swift */; };
 		86A963D81F032A8D006516C7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A963D71F032A8D006516C7 /* Post.swift */; };
-		86A963DA1F033138006516C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A963D91F033138006516C7 /* Assets.xcassets */; };
+		86D2E7ED1F057AE6000EEF6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86D2E7EC1F057AE6000EEF6E /* Assets.xcassets */; };
+		86D2E7F11F05B0CB000EEF6E /* PostCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2E7F01F05B0CB000EEF6E /* PostCollectionCell.swift */; };
 		86D5D6E41F0314BA003007DE /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5D6E31F0314BA003007DE /* PostsViewController.swift */; };
 		86D5D6E61F031AE9003007DE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5D6E51F031AE9003007DE /* ProfileViewController.swift */; };
 		86D5D6ED1F0322DD003007DE /* PhotoMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5D6EC1F0322DD003007DE /* PhotoMapViewController.swift */; };
@@ -66,7 +67,8 @@
 		869AC36B1F02F8E4003A0B5E /* InstagramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramUITests.swift; sourceTree = "<group>"; };
 		869AC36D1F02F8E4003A0B5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A963D71F032A8D006516C7 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		86A963D91F033138006516C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		86D2E7EC1F057AE6000EEF6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		86D2E7F01F05B0CB000EEF6E /* PostCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCollectionCell.swift; sourceTree = "<group>"; };
 		86D5D6E31F0314BA003007DE /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		86D5D6E51F031AE9003007DE /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		86D5D6EC1F0322DD003007DE /* PhotoMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoMapViewController.swift; sourceTree = "<group>"; };
@@ -147,7 +149,7 @@
 				869AC34B1F02F8E4003A0B5E /* AppDelegate.swift */,
 				86D5D6EB1F03216D003007DE /* Tabs */,
 				869AC34F1F02F8E4003A0B5E /* Main.storyboard */,
-				86A963D91F033138006516C7 /* Assets.xcassets */,
+				86D2E7EC1F057AE6000EEF6E /* Assets.xcassets */,
 				869AC3541F02F8E4003A0B5E /* LaunchScreen.storyboard */,
 				869AC3571F02F8E4003A0B5E /* Info.plist */,
 			);
@@ -183,6 +185,7 @@
 				86D5D6EC1F0322DD003007DE /* PhotoMapViewController.swift */,
 				86A963D71F032A8D006516C7 /* Post.swift */,
 				86D5D6E51F031AE9003007DE /* ProfileViewController.swift */,
+				86D2E7F01F05B0CB000EEF6E /* PostCollectionCell.swift */,
 			);
 			name = Tabs;
 			sourceTree = "<group>";
@@ -315,7 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				869AC3561F02F8E4003A0B5E /* LaunchScreen.storyboard in Resources */,
-				86A963DA1F033138006516C7 /* Assets.xcassets in Resources */,
+				86D2E7ED1F057AE6000EEF6E /* Assets.xcassets in Resources */,
 				869AC3511F02F8E4003A0B5E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,6 +485,7 @@
 				86D5D6ED1F0322DD003007DE /* PhotoMapViewController.swift in Sources */,
 				86D5D6E41F0314BA003007DE /* PostsViewController.swift in Sources */,
 				8632CEC91F03015200EEB91B /* LoginViewController.swift in Sources */,
+				86D2E7F11F05B0CB000EEF6E /* PostCollectionCell.swift in Sources */,
 				86D5D6E61F031AE9003007DE /* ProfileViewController.swift in Sources */,
 				869AC34E1F02F8E4003A0B5E /* ViewController.swift in Sources */,
 				86A963D81F032A8D006516C7 /* Post.swift in Sources */,

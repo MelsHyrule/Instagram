@@ -13,14 +13,49 @@ import ParseUI
 class DetailPostViewController: UIViewController {
 //has no initializers?
     
+    @IBOutlet weak var postPicturePFImageView: PFImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var datePostedLabel: UILabel!
+    @IBOutlet weak var captionLabel: UILabel!
     
-    
-    var post: PFObject
+    var post: PFObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        /*
+        let post = posts[indexPath.row]
+        let caption = post["caption"] as! String
+        let image = post["media"] as! PFFile
+        let author = post["author"] as! PFUser
+        
+        print (image.url)
+        
+        cell.captionLabel.text = caption
+        cell.postPictureImageView.file = image
+        cell.postPictureImageView.loadInBackground()
+        cell.usernameLabel.text = author.username
+        
+        */
+        
+        
+        let image = post["media"] as! PFFile
+        postPicturePFImageView.file = image
+        postPicturePFImageView.loadInBackground()
+        
+        let author = post["author"] as! PFUser
+        usernameLabel.text = author.username
+        
+        //date posted
+        let date = post.createdAt
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dateString = dateFormatter.string(from:date as! Date)
+        datePostedLabel.text = dateString as! String
+        
+        captionLabel.text = post["caption"] as! String
+        
     }
 
     override func didReceiveMemoryWarning() {

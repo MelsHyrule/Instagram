@@ -17,7 +17,6 @@ class PostsViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBOutlet weak var postsTableView: UITableView!
     
-    
     @IBAction func createPost(_ sender: Any) {
         //selectPic()
     }
@@ -45,20 +44,15 @@ class PostsViewController: UIViewController, UIImagePickerControllerDelegate, UI
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         
+        // Pass the selected object to the new view controller.
         let cell = sender as! UITableViewCell
         if let indexPath = postsTableView.indexPath(for: cell){
-            //let movie = movies[indexPath.row]
-            //let movie = filteredDatas[indexPath.row]
             let post = posts[indexPath.row]
             let detailPostViewController = segue.destination as! DetailPostViewController
             detailPostViewController.post = post
             postsTableView.deselectRow(at: indexPath, animated: true)
         }
-
-        
-        
     }
     
     
@@ -71,17 +65,11 @@ class PostsViewController: UIViewController, UIImagePickerControllerDelegate, UI
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
         
         let post = posts[indexPath.row]
-        let caption = post["caption"] as! String
-        let image = post["media"] as! PFFile
-        let author = post["author"] as! PFUser
-
-        print (image.url)
         
-        cell.captionLabel.text = caption
-        cell.postPictureImageView.file = image
-        cell.postPictureImageView.loadInBackground()
-        cell.usernameLabel.text = author.username
+        cell.post = post
         
+        
+              
         return cell
     }
     
