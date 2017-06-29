@@ -22,9 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="gradient1-wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="j59-Ag-axD">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="gradient-wallpaper-iphone2" translatesAutoresizingMaskIntoConstraints="NO" id="Mnh-6P-qoA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hvY-Wz-hYR">
                                 <rect key="frame" x="84" y="177" width="246" height="30"/>
@@ -68,6 +67,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Mnh-6P-qoA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5NR-nT-akr"/>
+                            <constraint firstAttribute="trailing" secondItem="Mnh-6P-qoA" secondAttribute="trailing" id="WHy-HP-dUa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mnh-6P-qoA" secondAttribute="bottom" id="alw-rP-lAm"/>
+                            <constraint firstItem="Mnh-6P-qoA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zgq-f7-57C"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="gfs-1l-IcT" appends="YES" id="tBS-Po-6r4"/>
                         </connections>
@@ -178,6 +183,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="gradient-wallpaper-iphone0" translatesAutoresizingMaskIntoConstraints="NO" id="Fot-J8-K1b">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEP-17-lvI">
                                 <rect key="frame" x="118.03750454681585" y="195" width="138" height="44"/>
                                 <color key="backgroundColor" red="1" green="0.90117236939447931" blue="0.4171950598994838" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -225,9 +233,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83845684269999998" blue="0.60232342139999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="scn-wD-QDU" firstAttribute="top" secondItem="Fot-J8-K1b" secondAttribute="bottom" id="8zg-fm-csE"/>
+                            <constraint firstItem="Fot-J8-K1b" firstAttribute="leading" secondItem="UBM-cc-9aS" secondAttribute="leading" id="dTB-Ty-ClZ"/>
                             <constraint firstItem="fEP-17-lvI" firstAttribute="top" secondItem="vQE-rg-TqX" secondAttribute="bottom" constant="175" id="jeL-sU-at6"/>
                             <constraint firstItem="ltH-Rh-QKH" firstAttribute="top" secondItem="fEP-17-lvI" secondAttribute="bottom" constant="58" id="lAS-yt-Hvo"/>
+                            <constraint firstAttribute="trailing" secondItem="Fot-J8-K1b" secondAttribute="trailing" id="uV9-sE-gHQ"/>
                             <constraint firstItem="mS1-sc-ZV1" firstAttribute="top" secondItem="ltH-Rh-QKH" secondAttribute="bottom" constant="58" id="wcd-SS-rZq"/>
+                            <constraint firstItem="Fot-J8-K1b" firstAttribute="top" secondItem="UBM-cc-9aS" secondAttribute="top" id="xiQ-Lh-NvT"/>
                         </constraints>
                     </view>
                     <connections>
@@ -236,7 +248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shX-nl-LUY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4063" y="-510"/>
+            <point key="canvasLocation" x="4061.5999999999999" y="-510.49475262368821"/>
         </scene>
         <!--Detail Post View Controller-->
         <scene sceneID="gUn-Ct-d8p">
@@ -250,6 +262,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="gradient-wallpaper-iphone4" translatesAutoresizingMaskIntoConstraints="NO" id="hse-nm-y9e">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBL-H9-sC6">
                                 <rect key="frame" x="16" y="345" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -277,6 +292,12 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.36191406250000002" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="hse-nm-y9e" firstAttribute="top" secondItem="MV9-Z0-clY" secondAttribute="top" id="GWa-2q-Rny"/>
+                            <constraint firstAttribute="trailing" secondItem="hse-nm-y9e" secondAttribute="trailing" id="J6w-bN-zsB"/>
+                            <constraint firstAttribute="bottom" secondItem="hse-nm-y9e" secondAttribute="bottom" id="cR0-KF-ln0"/>
+                            <constraint firstItem="hse-nm-y9e" firstAttribute="leading" secondItem="MV9-Z0-clY" secondAttribute="leading" id="xnI-tE-d5W"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5AL-JC-3jN"/>
                     <connections>
@@ -288,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8WA-nl-XAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4062" y="709"/>
+            <point key="canvasLocation" x="4061.5999999999999" y="707.49625187406298"/>
         </scene>
         <!--Photo Map View Controller-->
         <scene sceneID="pW2-TP-Ob3">
@@ -302,6 +323,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="gradient-wallpaper-iphone0" translatesAutoresizingMaskIntoConstraints="NO" id="TkG-Cr-nYv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0PI-vj-Mm9">
                                 <rect key="frame" x="16" y="80" width="160" height="160"/>
                                 <constraints>
@@ -344,14 +368,18 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="TkG-Cr-nYv" firstAttribute="leading" secondItem="RBj-gI-ZX0" secondAttribute="leading" id="2Jj-ng-Fo4"/>
                             <constraint firstItem="0PI-vj-Mm9" firstAttribute="leading" secondItem="RBj-gI-ZX0" secondAttribute="leadingMargin" id="6mK-ok-xw9"/>
+                            <constraint firstAttribute="trailing" secondItem="TkG-Cr-nYv" secondAttribute="trailing" id="6uS-s4-9M2"/>
                             <constraint firstItem="W9j-m2-IiB" firstAttribute="trailing" secondItem="RBj-gI-ZX0" secondAttribute="trailingMargin" id="ETa-u5-V8C"/>
                             <constraint firstItem="wWM-xf-tb2" firstAttribute="leading" secondItem="RBj-gI-ZX0" secondAttribute="leadingMargin" id="LCM-xi-mhZ"/>
                             <constraint firstItem="W9j-m2-IiB" firstAttribute="leading" secondItem="0PI-vj-Mm9" secondAttribute="trailing" constant="10" id="ULb-1m-YBe"/>
                             <constraint firstItem="AzO-P9-pra" firstAttribute="top" secondItem="93z-kp-mf2" secondAttribute="bottom" id="YLm-0W-82B"/>
+                            <constraint firstItem="TkG-Cr-nYv" firstAttribute="top" secondItem="RBj-gI-ZX0" secondAttribute="top" id="btJ-GD-0dY"/>
                             <constraint firstItem="AzO-P9-pra" firstAttribute="trailing" secondItem="RBj-gI-ZX0" secondAttribute="trailingMargin" id="dqP-AY-EvD"/>
                             <constraint firstItem="0PI-vj-Mm9" firstAttribute="top" secondItem="wWM-xf-tb2" secondAttribute="bottom" constant="30" id="e2i-is-hb0"/>
                             <constraint firstItem="wWM-xf-tb2" firstAttribute="top" secondItem="93z-kp-mf2" secondAttribute="bottom" id="eBF-bb-H8k"/>
+                            <constraint firstItem="YNp-cn-BfW" firstAttribute="top" secondItem="TkG-Cr-nYv" secondAttribute="bottom" id="iN2-dh-3LY"/>
                             <constraint firstItem="W9j-m2-IiB" firstAttribute="top" secondItem="AzO-P9-pra" secondAttribute="bottom" constant="30" id="lqP-lR-1L8"/>
                         </constraints>
                     </view>
@@ -363,7 +391,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NPd-rA-fod" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5001" y="-510"/>
+            <point key="canvasLocation" x="5000.8000000000002" y="-510.49475262368821"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="Ni2-4Y-Qkx">
@@ -522,11 +550,13 @@
     </scenes>
     <resources>
         <image name="camera_tabber_item" width="32" height="32"/>
-        <image name="gradient1-wallpaper" width="736" height="1309"/>
+        <image name="gradient-wallpaper-iphone0" width="640" height="1136"/>
+        <image name="gradient-wallpaper-iphone2" width="736" height="1309"/>
+        <image name="gradient-wallpaper-iphone4" width="640" height="1136"/>
         <image name="house_tabbar_item" width="32" height="32"/>
         <image name="person_tabbar_item" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bpu-7H-jXV"/>
+        <segue reference="NlD-jX-xVQ"/>
     </inferredMetricsTieBreakers>
 </document>

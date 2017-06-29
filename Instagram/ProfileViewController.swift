@@ -16,12 +16,15 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet weak var postsCollectionView: UICollectionView!
     
     var posts: [PFObject] = []
+    var userPosts: [PFObject] = []
     var username = ""
     var refreshControl: UIRefreshControl!
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        currentUsernameLabel.text = PFUser.current()?.username as! String
         
         postsCollectionView.dataSource = self
         
@@ -32,8 +35,6 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
         postsCollectionView.dataSource = self
         
         let layout = postsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        //layout.minimumInteritemSpacing = 10
-        //layout.minimumLineSpacing = 10
         let cellsPerLine: CGFloat  = 3
         let interItemSpacingTotal = layout.minimumInteritemSpacing * (cellsPerLine - 1)
         let width = (postsCollectionView.frame.size.width - interItemSpacingTotal) / cellsPerLine
@@ -44,6 +45,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
         
         fetchPosts()
         
+        
         // Do any additional setup after loading the view.
     }
     
@@ -53,23 +55,24 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
     }
     
     
-
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
         
-        let cell = sender as! PostCollectionCell
-        if let indexPath = postsCollectionView.indexPath(for: cell){
-            let post = self.posts[indexPath.row]
-            let detailPostViewController = segue.destination as! DetailPostViewController
-            detailPostViewController.post = post
+        if (sender != nil) {
+            let cell = sender as! PostCollectionCell
+            if let indexPath = postsCollectionView.indexPath(for: cell){
+                let post = self.posts[indexPath.row]
+                let detailPostViewController = segue.destination as! DetailPostViewController
+                detailPostViewController.post = post
+            }
         }
-
         
-     }
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -83,17 +86,16 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
         let image = post["media"] as! PFFile
         cell.postImageView.file = image
         cell.postImageView.loadInBackground()
-
         
         /*
          
-        let author = post["author"] as! PFUser
-        
-        print (image.url)
-        
-        cell.captionLabel.text = caption
-        cell.usernameLabel.text = author.username
-        */
+         let author = post["author"] as! PFUser
+         
+         print (image.url)
+         
+         cell.captionLabel.text = caption
+         cell.usernameLabel.text = author.username
+         */
         
         return cell
     }
@@ -114,10 +116,17 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
         let query = PFQuery(className: "Post")
         query.addDescendingOrder("createdAt")
         query.includeKey("author")
+        
+        query.whereKey("author", equalTo: PFUser.current())
+        
         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
-            if let posts = posts {
+            
+            if let posts = posts  {
+                //if current user = post author
                 // do something with the array of object returned by the call
                 self.posts = posts
+                self.userPosts = posts
+                
                 self.postsCollectionView.reloadData()
             } else {
                 print(error?.localizedDescription as? String)
@@ -128,6 +137,6 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
         // immediately.  Any code that depends on the query result should be moved
         // inside the completion block above.
     }
- 
+    
     
 }
