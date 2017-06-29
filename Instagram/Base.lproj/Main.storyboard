@@ -121,6 +121,7 @@
                                             <outlet property="captionLabel" destination="bCn-fQ-9Bg" id="2Je-cy-E1b"/>
                                             <outlet property="postPictureImageView" destination="EXE-cG-9oB" id="SUN-ur-ubn"/>
                                             <outlet property="usernameLabel" destination="ObM-ad-1Jm" id="dOr-wx-1BG"/>
+                                            <segue destination="Puz-eg-XLn" kind="show" id="zlX-1M-1Ed"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -132,17 +133,92 @@
                         <barButtonItem key="rightBarButtonItem" title="post" id="GLy-vK-Clz">
                             <connections>
                                 <action selector="createPost:" destination="2vZ-iP-c56" id="RnK-xK-Zc9"/>
+                                <segue destination="Rcc-Xm-KXm" kind="presentation" identifier="createPost" id="lVv-zR-FxT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="postsTableView" destination="xlp-8s-cgi" id="gQ7-7Q-m5w"/>
-                        <segue destination="ng5-nQ-DQe" kind="presentation" identifier="createPost" id="ySW-4s-6yO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nvv-j0-lgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2850.4000000000001" y="-156.97151424287858"/>
+        </scene>
+        <!--Choose Picture From Location View Controller-->
+        <scene sceneID="k7C-73-dIV">
+            <objects>
+                <viewController id="Rcc-Xm-KXm" customClass="ChoosePictureFromLocationViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vQE-rg-TqX"/>
+                        <viewControllerLayoutGuide type="bottom" id="scn-wD-QDU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UBM-cc-9aS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEP-17-lvI">
+                                <rect key="frame" x="133" y="199" width="108" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90117236939447931" blue="0.4171950598994838" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="camera roll">
+                                    <color key="titleColor" red="1" green="0.36305361687996673" blue="0.32495237246714603" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="cameraRollButton:" destination="Rcc-Xm-KXm" eventType="touchUpInside" id="zfi-le-ldX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mS1-sc-ZV1">
+                                <rect key="frame" x="133" y="399" width="108" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90117236940000001" blue="0.4171950599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="no">
+                                    <color key="titleColor" red="1" green="0.36305361689999999" blue="0.32495237249999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButton:" destination="Rcc-Xm-KXm" eventType="touchUpInside" id="e5g-Qr-AyQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltH-Rh-QKH">
+                                <rect key="frame" x="133" y="301" width="108" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.90117236940000001" blue="0.4171950599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="take picture">
+                                    <color key="titleColor" red="1" green="0.36305361689999999" blue="0.32495237249999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePictureButton:" destination="Rcc-Xm-KXm" eventType="touchUpInside" id="Xit-Aq-BAo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.83845684269999998" blue="0.60232342139999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <connections>
+                        <segue destination="ng5-nQ-DQe" kind="presentation" identifier="makePost" id="O3D-G5-G1g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="shX-nl-LUY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4063" y="-510"/>
+        </scene>
+        <!--Detail Post View Controller-->
+        <scene sceneID="gUn-Ct-d8p">
+            <objects>
+                <viewController id="k6D-Qa-b2U" customClass="DetailPostViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V0G-AJ-d1z"/>
+                        <viewControllerLayoutGuide type="bottom" id="C7v-rj-3XI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MV9-Z0-clY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.36191406250000002" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5AL-JC-3jN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8WA-nl-XAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5000.8000000000002" y="195.6521739130435"/>
         </scene>
         <!--Photo Map View Controller-->
         <scene sceneID="pW2-TP-Ob3">
@@ -157,7 +233,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0PI-vj-Mm9">
-                                <rect key="frame" x="16" y="20" width="159" height="166"/>
+                                <rect key="frame" x="16" y="67" width="159" height="166"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzO-P9-pra">
@@ -175,6 +251,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWM-xf-tb2">
+                                <rect key="frame" x="16" y="20" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="onCancelPressed:" destination="ng5-nQ-DQe" eventType="touchUpInside" id="KoR-xx-jdZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -186,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NPd-rA-fod" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3784.8000000000002" y="-157.87106446776613"/>
+            <point key="canvasLocation" x="5001" y="-510"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="Ni2-4Y-Qkx">
@@ -208,17 +292,25 @@
                                     <action selector="onSignOut:" destination="HtX-Gq-yNX" eventType="touchUpInside" id="Yo4-mE-mpd"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4r-7H-QZE">
+                                <rect key="frame" x="16" y="72" width="343" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.5" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Lvh-WE-VBk"/>
                     <connections>
+                        <outlet property="currentUsernameLabel" destination="D4r-7H-QZE" id="zmY-Zx-taZ"/>
                         <segue destination="BYZ-38-t0r" kind="showDetail" identifier="logoutSegue" animates="NO" id="YhC-7u-hSO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vH0-gy-5fJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2849" y="1271"/>
+            <point key="canvasLocation" x="2848.8000000000002" y="1270.6146926536733"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="n5O-TR-aWi">
@@ -293,6 +385,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJt-bL-6Jq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1853.5999999999999" y="1271.5142428785607"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bDm-rZ-DCK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Puz-eg-XLn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZS1-mL-Ioy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="k6D-Qa-b2U" kind="relationship" relationship="rootViewController" id="maw-X9-KOs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FoG-cg-dgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4061.5999999999999" y="195.6521739130435"/>
         </scene>
     </scenes>
     <resources>

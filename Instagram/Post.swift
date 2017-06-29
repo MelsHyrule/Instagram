@@ -43,8 +43,6 @@ class Post: NSObject {
         
     }
     
-    
-    
     /**
      Method to convert UIImage to PFFile
      

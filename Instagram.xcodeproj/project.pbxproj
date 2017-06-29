@@ -10,6 +10,8 @@
 		0E0275679B9E240573ECF4C5 /* Pods_InstagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBD644887837E67F8244A6B /* Pods_InstagramUITests.framework */; };
 		5459F43A603C8CA8174AE4D0 /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB761BD5DC603D3E65DF80B4 /* Pods_Instagram.framework */; };
 		8632CEC91F03015200EEB91B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8632CEC81F03015200EEB91B /* LoginViewController.swift */; };
+		864776121F04877C003C840D /* ChoosePictureFromLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864776111F04877C003C840D /* ChoosePictureFromLocationViewController.swift */; };
+		864776141F04C48D003C840D /* DetailPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864776131F04C48D003C840D /* DetailPostViewController.swift */; };
 		869AC34C1F02F8E4003A0B5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869AC34B1F02F8E4003A0B5E /* AppDelegate.swift */; };
 		869AC34E1F02F8E4003A0B5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869AC34D1F02F8E4003A0B5E /* ViewController.swift */; };
 		869AC3511F02F8E4003A0B5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 869AC34F1F02F8E4003A0B5E /* Main.storyboard */; };
@@ -49,6 +51,8 @@
 		447F19CF85134A4E1577DD0D /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		56A848B41A932A105174DDCA /* Pods-InstagramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramUITests/Pods-InstagramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8632CEC81F03015200EEB91B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		864776111F04877C003C840D /* ChoosePictureFromLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePictureFromLocationViewController.swift; sourceTree = "<group>"; };
+		864776131F04C48D003C840D /* DetailPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPostViewController.swift; sourceTree = "<group>"; };
 		869AC3481F02F8E4003A0B5E /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		869AC34B1F02F8E4003A0B5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		869AC34D1F02F8E4003A0B5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -173,7 +177,9 @@
 			children = (
 				8632CEC81F03015200EEB91B /* LoginViewController.swift */,
 				86D5D6E31F0314BA003007DE /* PostsViewController.swift */,
+				864776131F04C48D003C840D /* DetailPostViewController.swift */,
 				86E4DAB61F0450C80009EE4E /* PostCell.swift */,
+				864776111F04877C003C840D /* ChoosePictureFromLocationViewController.swift */,
 				86D5D6EC1F0322DD003007DE /* PhotoMapViewController.swift */,
 				86A963D71F032A8D006516C7 /* Post.swift */,
 				86D5D6E51F031AE9003007DE /* ProfileViewController.swift */,
@@ -481,6 +487,8 @@
 				86A963D81F032A8D006516C7 /* Post.swift in Sources */,
 				869AC34C1F02F8E4003A0B5E /* AppDelegate.swift in Sources */,
 				86E4DAB71F0450C80009EE4E /* PostCell.swift in Sources */,
+				864776121F04877C003C840D /* ChoosePictureFromLocationViewController.swift in Sources */,
+				864776141F04C48D003C840D /* DetailPostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

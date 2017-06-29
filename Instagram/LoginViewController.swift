@@ -26,16 +26,25 @@
     }
     
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
+        
+//        Could not cast value of type 'UITabBarController' (0x10bc2a418) to 'Instagram.ProfileViewController' (0x109c9e3a8).
+/*
+         
+         
+        let profileViewController = segue.destination as! ProfileViewController
+        profileViewController.currentUsernameLabel.text = usernameField.text
+        */
+        
+        
      }
-     */
-    
+  
     
     @IBAction func onSignIn(_ sender: Any) {
         PFUser.logInWithUsername(inBackground: usernameField.text!, password: passwordField.text!) { (user: PFUser?, error: Error?) in
@@ -47,8 +56,6 @@
             }
         }
     }
-    
-    
     @IBAction func onSignUp(_ sender: Any) {
         // initialize a user object
         let newUser = PFUser()
@@ -69,7 +76,6 @@
             }
         }
     }
-    
     @IBAction func tapGesture(_ sender: Any) {
         view.endEditing(true)
     }
