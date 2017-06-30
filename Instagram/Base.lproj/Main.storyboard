@@ -158,7 +158,6 @@
                     <navigationItem key="navigationItem" id="3eJ-Ah-fcu">
                         <barButtonItem key="rightBarButtonItem" title="post" id="GLy-vK-Clz">
                             <connections>
-                                <action selector="createPost:" destination="2vZ-iP-c56" id="RnK-xK-Zc9"/>
                                 <segue destination="Rcc-Xm-KXm" kind="presentation" identifier="createPost" id="lVv-zR-FxT"/>
                             </connections>
                         </barButtonItem>
@@ -244,11 +243,12 @@
                     </view>
                     <connections>
                         <segue destination="ng5-nQ-DQe" kind="presentation" identifier="makePost" id="O3D-G5-G1g"/>
+                        <segue destination="HtX-Gq-yNX" kind="show" identifier="makeProfilePic" id="FbH-GF-VeA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shX-nl-LUY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4061.5999999999999" y="-510.49475262368821"/>
+            <point key="canvasLocation" x="4335" y="421"/>
         </scene>
         <!--Detail Post View Controller-->
         <scene sceneID="gUn-Ct-d8p">
@@ -309,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8WA-nl-XAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4061.5999999999999" y="707.49625187406298"/>
+            <point key="canvasLocation" x="2849" y="554"/>
         </scene>
         <!--Photo Map View Controller-->
         <scene sceneID="pW2-TP-Ob3">
@@ -391,7 +391,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NPd-rA-fod" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5000.8000000000002" y="-510.49475262368821"/>
+            <point key="canvasLocation" x="5247" y="421"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="Ni2-4Y-Qkx">
@@ -414,7 +414,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4r-7H-QZE">
-                                <rect key="frame" x="16" y="72" width="343" height="39"/>
+                                <rect key="frame" x="136" y="72" width="223" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.98489227393569689" green="1" blue="0.71728655007105124" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
@@ -454,6 +454,18 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_tab" translatesAutoresizingMaskIntoConstraints="NO" id="6gC-c5-tfA" customClass="PFImageView">
+                                <rect key="frame" x="16" y="72" width="112" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUH-gD-n5K">
+                                <rect key="frame" x="229" y="157" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="New profile picture"/>
+                                <connections>
+                                    <segue destination="Rcc-Xm-KXm" kind="presentation" identifier="makeProfilePic" id="2aH-ds-hIU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.5" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -466,6 +478,7 @@
                     <connections>
                         <outlet property="currentUsernameLabel" destination="D4r-7H-QZE" id="zmY-Zx-taZ"/>
                         <outlet property="postsCollectionView" destination="3n3-ZC-eTY" id="547-aN-zFI"/>
+                        <outlet property="profilePictureImageView" destination="6gC-c5-tfA" id="Kh7-pB-aOs"/>
                         <segue destination="BYZ-38-t0r" kind="showDetail" identifier="logoutSegue" animates="NO" id="YhC-7u-hSO"/>
                     </connections>
                 </viewController>
@@ -555,8 +568,11 @@
         <image name="gradient-wallpaper-iphone4" width="640" height="1136"/>
         <image name="house_tabbar_item" width="32" height="32"/>
         <image name="person_tabbar_item" width="32" height="32"/>
+        <image name="profile_tab" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NlD-jX-xVQ"/>
+        <segue reference="FbH-GF-VeA"/>
+        <segue reference="2aH-ds-hIU"/>
+        <segue reference="bpu-7H-jXV"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,32 +9,38 @@
 import UIKit
 
 class ChoosePictureFromLocationViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     var cameraRollBool: Bool = false
     var myPicImage : UIImage!
+    var makingPost: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        let photoMapViewController = segue.destination as! PhotoMapViewController
-        photoMapViewController.useCamera = cameraRollBool
-        photoMapViewController.myPicImage = myPicImage
+        if (segue.identifier == "makePost") {
+            let photoMapViewController = segue.destination as! PhotoMapViewController
+            photoMapViewController.useCamera = cameraRollBool
+            photoMapViewController.myPicImage = myPicImage
+        } else if (segue.identifier == "makeProfilePic") {
+            let profileViewController = segue.destination as! ProfileViewController
+            //ProfileViewController
+        }
         
     }
     
@@ -44,7 +50,7 @@ class ChoosePictureFromLocationViewController: UIViewController, UIImagePickerCo
         selectPic()
         //self.performSegue(withIdentifier: "makePost", sender:  nil)
     }
-
+    
     @IBAction func takePictureButton(_ sender: Any) {
         cameraRollBool = false
         selectPic()
@@ -70,7 +76,7 @@ class ChoosePictureFromLocationViewController: UIViewController, UIImagePickerCo
             print("Camera 🚫 available so we will use photo library instead")
             vc.sourceType = .photoLibrary
         }
-//        vc.sourceType = UIImagePickerControllerSourceType.camera
+        //        vc.sourceType = UIImagePickerControllerSourceType.camera
         self.present(vc, animated: true, completion: nil)
         print ("Stuff happened")
     }
@@ -86,7 +92,13 @@ class ChoosePictureFromLocationViewController: UIViewController, UIImagePickerCo
         
         // Dismiss UIImagePickerController to go back to your original view controller
         dismiss(animated: true, completion: nil)
-        performSegue(withIdentifier: "makePost", sender: self)
+        
+        if (!makingPost) {
+            performSegue(withIdentifier: "makePost", sender: self)
+        } else {
+            performSegue(withIdentifier: "makeProfilePic", sender: self)    //this segue is not working
+        }
     }
-
+        
+    
 }

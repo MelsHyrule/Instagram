@@ -20,7 +20,6 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
     var postCaption = ""
     var useCamera: Bool = false
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -52,8 +51,8 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
                 print (error.localizedDescription)
             } else {
                 print("I finished posting")
-                //refresh table view
                 
+                //refresh table view
 //                let postsViewController = segue.destination as! PostsViewController
 //                postsViewController.postsTableView.reloadData()
             }

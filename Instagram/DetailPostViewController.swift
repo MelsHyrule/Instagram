@@ -24,22 +24,6 @@ class DetailPostViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        /*
-        let post = posts[indexPath.row]
-        let caption = post["caption"] as! String
-        let image = post["media"] as! PFFile
-        let author = post["author"] as! PFUser
-        
-        print (image.url)
-        
-        cell.captionLabel.text = caption
-        cell.postPictureImageView.file = image
-        cell.postPictureImageView.loadInBackground()
-        cell.usernameLabel.text = author.username
-        
-        */
-        
-        
         let image = post["media"] as! PFFile
         postPicturePFImageView.file = image
         postPicturePFImageView.loadInBackground()

@@ -12,6 +12,7 @@ import ParseUI
 
 class ProfileViewController: UIViewController, UICollectionViewDataSource {
     
+    @IBOutlet weak var profilePictureImageView: PFImageView!
     @IBOutlet weak var currentUsernameLabel: UILabel!
     @IBOutlet weak var postsCollectionView: UICollectionView!
     
@@ -19,7 +20,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
     var userPosts: [PFObject] = []
     var username = ""
     var refreshControl: UIRefreshControl!
-    
+    var myPicImage : UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,14 +65,18 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
         // Pass the selected object to the new view controller.
         
         if (sender != nil) {
-            let cell = sender as! PostCollectionCell
-            if let indexPath = postsCollectionView.indexPath(for: cell){
-                let post = self.posts[indexPath.row]
-                let detailPostViewController = segue.destination as! DetailPostViewController
-                detailPostViewController.post = post
+            if (segue.identifier == "makeProfilePic"){
+                let choosePictureFromLocationViewController = segue.destination as! ChoosePictureFromLocationViewController
+                choosePictureFromLocationViewController.makingPost = true
+            } else {
+                let cell = sender as! PostCollectionCell
+                if let indexPath = postsCollectionView.indexPath(for: cell){
+                    let post = self.posts[indexPath.row]
+                    let detailPostViewController = segue.destination as! DetailPostViewController
+                    detailPostViewController.post = post
+                }
             }
         }
-        
     }
     
     
