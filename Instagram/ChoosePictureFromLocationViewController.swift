@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
+import AVFoundation
+import Sharaku
 
 class ChoosePictureFromLocationViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

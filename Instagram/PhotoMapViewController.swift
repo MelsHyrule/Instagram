@@ -10,11 +10,13 @@ import UIKit
 import Parse
 import ParseUI
 import AVFoundation
+import Sharaku
 
-class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, SHViewControllerDelegate {
     
     @IBOutlet weak var myPic: UIImageView!
-    @IBOutlet weak var myPicCaption: UITextField!
+    //@IBOutlet weak var myPicCaption: UITextField!
+    @IBOutlet weak var myPicCaptionTextView: UITextView!
     
     var myPicImage : UIImage!
     var postCaption = ""
@@ -23,7 +25,6 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        resizeImage(image: myPicImage, targetSize: CGSize(width: 375, height: 375))
         myPic.image = myPicImage
         
     }
@@ -45,13 +46,14 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
      */
     
     @IBAction func onSharePressed(_ sender: Any) {
-        postCaption = myPicCaption.text ?? ""
+        postCaption = myPicCaptionTextView.text ?? ""
+        myPicImage = resizeImage(image: myPicImage, targetSize: CGSize(width: 375, height: 375))
+        myPic.image = myPicImage
         Post.postUserImage(image: myPic.image, withCaption: postCaption) { (status: Bool, error: Error?) in
             if let error = error {
-                print (error.localizedDescription)
+                print (error.localizedDescription)      //we're having the error that its not saving the picture (Could not store file.)
             } else {
                 print("I finished posting")
-                
                 //refresh table view
 //                let postsViewController = segue.destination as! PostsViewController
 //                postsViewController.postsTableView.reloadData()
@@ -92,5 +94,23 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
         return newImage!
     }
     
+    @IBAction func editPictureButton(_ sender: Any) {
+        let imageToBeFiltered = myPicImage
+        let vc = SHViewController(image: imageToBeFiltered!)
+        vc.delegate = self
+        self.present(vc, animated:true, completion: nil)
+        
+    }
+    
+    func shViewControllerImageDidFilter(image: UIImage) {
+        // Filtered image will be returned here.
+        myPicImage = image
+        myPic.image = myPicImage
+    }
+    
+    func shViewControllerDidCancel() {
+        // This will be called when you cancel filtering the image.
+    }
+
     
 }

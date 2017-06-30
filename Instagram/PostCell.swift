@@ -25,7 +25,6 @@ class PostCell: UITableViewCell {
             postPictureImageView.loadInBackground()
             usernameLabel.text = author.username
 
-            
             let height = postPictureImageView.image?.size.height
             let width = postPictureImageView.image?.size.width
             
