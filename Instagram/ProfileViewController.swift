@@ -20,12 +20,29 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
     var userPosts: [PFObject] = []
     var username = ""
     var refreshControl: UIRefreshControl!
-    var myPicImage : UIImage!
+    var myProfilePicture : UIImage!
+    var myProfilePictureFile : PFFile!
+    let user = PFUser.current()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         currentUsernameLabel.text = PFUser.current()?.username as! String
+        
+        
+//        var post = posts[0]
+//        
+//        let author = post["author"] as! PFUser
+//        profilePictureImageView.file = author["profilePicture"] as? PFFile
+//        profilePictureImageView.loadInBackground()
+
+        
+        
+        myProfilePictureFile = getPFFileFromImage(image: myProfilePicture)
+        profilePictureImageView.file = myProfilePictureFile
+        profilePictureImageView.loadInBackground()
+        //this is not working
+        
         
         postsCollectionView.dataSource = self
         
@@ -122,8 +139,6 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
         query.addDescendingOrder("createdAt")
         query.includeKey("author")
         query.whereKey("author", equalTo: PFUser.current())
-        
-        
         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
             
             if let posts = posts  {
@@ -143,5 +158,16 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
         // inside the completion block above.
     }
     
+    func getPFFileFromImage(image: UIImage?) -> PFFile? {
+        // check if image is not nil
+        if let image = image {
+            // get image data and check if that is not nil
+            if let imageData = UIImagePNGRepresentation(image) {
+                return PFFile(name: "image.png", data: imageData)
+            }
+        }
+        return nil
+    }
+
     
 }

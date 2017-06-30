@@ -18,6 +18,7 @@ class ChoosePictureFromLocationViewController: UIViewController, UIImagePickerCo
     var myPicImage : UIImage!
     var makingPost: Bool = false
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,14 +37,22 @@ class ChoosePictureFromLocationViewController: UIViewController, UIImagePickerCo
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
+        let photoMapViewController = segue.destination as! PhotoMapViewController
+        photoMapViewController.useCamera = cameraRollBool
+        photoMapViewController.myPicImage = myPicImage
+
         if (segue.identifier == "makePost") {
-            let photoMapViewController = segue.destination as! PhotoMapViewController
-            photoMapViewController.useCamera = cameraRollBool
-            photoMapViewController.myPicImage = myPicImage
+            print("making post")
+            photoMapViewController.makingPost = true
         } else if (segue.identifier == "makeProfilePic") {
-            let profileViewController = segue.destination as! ProfileViewController
-            //ProfileViewController
+            print("making prof pic")
+//            let photoMapViewController = segue.destination as! PhotoMapViewController
+//            photoMapViewController.useCamera = cameraRollBool
+//            photoMapViewController.myPicImage = myPicImage
+            photoMapViewController.makingPost = false
+
+//            let profileViewController = segue.destination as! ProfileViewController
+//            profileViewController.myProfilePicture = myPicImage
         }
         
     }
@@ -100,7 +109,7 @@ class ChoosePictureFromLocationViewController: UIViewController, UIImagePickerCo
         if (!makingPost) {
             performSegue(withIdentifier: "makePost", sender: self)
         } else {
-            performSegue(withIdentifier: "makeProfilePic", sender: self)    //this segue is not working
+            performSegue(withIdentifier: "editProfPic", sender: self)    //this segue is not working
         }
     }
         

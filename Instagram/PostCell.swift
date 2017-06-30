@@ -24,22 +24,16 @@ class PostCell: UITableViewCell {
             postPictureImageView.file = image
             postPictureImageView.loadInBackground()
             usernameLabel.text = author.username
-
-            let height = postPictureImageView.image?.size.height
-            let width = postPictureImageView.image?.size.width
             
-            let screenSize = UIScreen.main.bounds
-            let screenWidth = screenSize.width
-            let screenHeight = screenSize.height
-            
-            //postPictureWidthConstraint.constant = screenWidth
-            //postPictureHeightConstraint.constant = (height)! * (screenWidth) / (width)!
+            profilePicturePFImageVIew.file = author["profilePicture"] as? PFFile
+            profilePicturePFImageVIew.loadInBackground()
             
         }
     
     }
     
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var profilePicturePFImageVIew: PFImageView!
     @IBOutlet weak var postPictureImageView: PFImageView!
     @IBOutlet weak var captionLabel: UILabel!
     

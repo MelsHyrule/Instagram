@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import ParseUI
 
 class PostsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
     
@@ -78,7 +79,6 @@ class PostsViewController: UIViewController, UIImagePickerControllerDelegate, UI
         let query = PFQuery(className: "Post")
         query.addDescendingOrder("createdAt")
         query.includeKey("author")
-        
         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
             if let posts = posts {
                 // do something with the array of object returned by the call
@@ -94,58 +94,4 @@ class PostsViewController: UIViewController, UIImagePickerControllerDelegate, UI
         // inside the completion block above.
     }
     
-    
-    /*
-    func scrollViewDidScroll(_ scrollView: UIScrollView) { //it does nothing basically
-        // Handle scroll behavior here
-        if (!isMoreDataLoading) {
-            // Calculate the position of one screen length before the bottom of the results
-            let scrollViewContentHeight = postsTableView.contentSize.height
-            let scrollOffsetThreshold = scrollViewContentHeight - postsTableView.bounds.size.height
-            
-            // When the user has scrolled past the threshold, start requesting
-            if(scrollView.contentOffset.y > scrollOffsetThreshold && postsTableView.isDragging) {
-                isMoreDataLoading = true
-                print(" T H I  S I S H A P P E N I N G")
-                loadMoreData()
-                // ... Code to load more results ...
-                //fetchPosts()
-            }
-        }
-    }
-    
-    
-    func loadMoreData() {       //it does nothing basically
-        let query = PFQuery(className: "Post")
-        query.addDescendingOrder("createdAt")
-        query.includeKey("author")
-        
-        query.whereKey("author", equalTo: PFUser.current())
-        
-        query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
-            
-            if let posts = posts  {
-                
-                let dataDictionary = posts
-                //print(dataDictionary)
-                // TODO: Get the posts and store in posts property
-                // Get the dictionary from the response key
-                let responseDictionary = dataDictionary
-                // Store the returned array of dictionaries in our posts property
-                self.posts += responseDictionarys
-                // Reload the tableView now that there is new data
-                self.postsTableView.reloadData()
-                
-            } else {
-                //print(error.localizedDescription)
-                print ("error in infinite scroll")
-            }
-            self.postsTableView.reloadData()
-            self.isMoreDataLoading = false
-            
-            //task.resume()
-        }
-    }
-
-    */
 }

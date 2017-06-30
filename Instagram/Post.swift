@@ -43,6 +43,22 @@ class Post: NSObject {
         
     }
     
+    class func uploadUserImage(image: UIImage?, withCaption caption: String?, withCompletion completion: PFBooleanResultBlock?) {
+        
+        
+        let user = PFUser.current()!
+        user["profilePicture"] = getPFFileFromImage(image: image)
+        
+        
+        // Save object (following function will save the object in Parse asynchronously)
+        user.saveInBackground { (success: Bool, error: Error?) in
+            //
+            completion?(success, error)
+        }
+ 
+    }
+
+    
     /**
      Method to convert UIImage to PFFile
      
