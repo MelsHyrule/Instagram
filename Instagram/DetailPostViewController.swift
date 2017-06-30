@@ -16,7 +16,7 @@ class DetailPostViewController: UIViewController {
     @IBOutlet weak var postPicturePFImageView: PFImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var datePostedLabel: UILabel!
-    @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var captionTextView: UITextView!
     
     var post: PFObject!
     
@@ -38,7 +38,7 @@ class DetailPostViewController: UIViewController {
         let dateString = dateFormatter.string(from:date as! Date)
         datePostedLabel.text = dateString as! String
         
-        captionLabel.text = post["caption"] as! String
+        captionTextView.text = post["caption"] as! String
         
     }
 

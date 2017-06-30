@@ -79,6 +79,7 @@ class PostsViewController: UIViewController, UIImagePickerControllerDelegate, UI
         let query = PFQuery(className: "Post")
         query.addDescendingOrder("createdAt")
         query.includeKey("author")
+        
         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
             if let posts = posts {
                 // do something with the array of object returned by the call

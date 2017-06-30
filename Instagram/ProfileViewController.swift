@@ -121,8 +121,8 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
         let query = PFQuery(className: "Post")
         query.addDescendingOrder("createdAt")
         query.includeKey("author")
-        
         query.whereKey("author", equalTo: PFUser.current())
+        
         
         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
             
