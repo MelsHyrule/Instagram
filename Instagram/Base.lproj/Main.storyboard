@@ -188,44 +188,33 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="gradient-wallpaper-iphone0" translatesAutoresizingMaskIntoConstraints="NO" id="Fot-J8-K1b">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEP-17-lvI">
-                                <rect key="frame" x="118.03750454681585" y="195" width="138" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEP-17-lvI">
+                                <rect key="frame" x="0.0" y="188" width="375" height="44"/>
                                 <color key="backgroundColor" red="1" green="0.90117236939447931" blue="0.4171950598994838" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="138" id="KMg-7s-s5h"/>
-                                    <constraint firstAttribute="height" constant="44" id="uKy-Fp-ccY"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <state key="normal" title="camera roll">
+                                <state key="normal" title="Take Picture">
                                     <color key="titleColor" red="1" green="0.36305361687996673" blue="0.32495237246714603" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="cameraRollButton:" destination="Rcc-Xm-KXm" eventType="touchUpInside" id="zfi-le-ldX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mS1-sc-ZV1">
-                                <rect key="frame" x="132.03750454681585" y="399" width="108.00000000000045" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mS1-sc-ZV1">
+                                <rect key="frame" x="0.0" y="399" width="375" height="44"/>
                                 <color key="backgroundColor" red="1" green="0.90117236940000001" blue="0.4171950599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="108" id="YQF-Ox-beE"/>
-                                    <constraint firstAttribute="height" constant="44" id="bqk-L9-R7F"/>
-                                </constraints>
-                                <state key="normal" title="no">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <state key="normal" title="Cancel">
                                     <color key="titleColor" red="1" green="0.36305361689999999" blue="0.32495237249999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="cancelButton:" destination="Rcc-Xm-KXm" eventType="touchUpInside" id="e5g-Qr-AyQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltH-Rh-QKH">
-                                <rect key="frame" x="112.03750454681585" y="297" width="148.00000000000045" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltH-Rh-QKH">
+                                <rect key="frame" x="0.0" y="300" width="375" height="44"/>
                                 <color key="backgroundColor" red="1" green="0.90117236940000001" blue="0.4171950599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="2N0-ly-Tbe"/>
-                                    <constraint firstAttribute="width" constant="148" id="jz8-Vj-dJe"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <state key="normal" title="take picture">
+                                <state key="normal" title="Camera Roll">
                                     <color key="titleColor" red="1" green="0.36305361689999999" blue="0.32495237249999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
@@ -235,12 +224,18 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83845684269999998" blue="0.60232342139999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="scn-wD-QDU" firstAttribute="top" secondItem="Fot-J8-K1b" secondAttribute="bottom" id="8zg-fm-csE"/>
+                            <constraint firstItem="mS1-sc-ZV1" firstAttribute="top" secondItem="ltH-Rh-QKH" secondAttribute="bottom" constant="55" id="69U-pp-R8u"/>
+                            <constraint firstAttribute="trailing" secondItem="mS1-sc-ZV1" secondAttribute="trailing" id="B7o-Wx-8uF"/>
+                            <constraint firstAttribute="trailing" secondItem="fEP-17-lvI" secondAttribute="trailing" id="Fiq-nS-V8g"/>
+                            <constraint firstItem="ltH-Rh-QKH" firstAttribute="top" secondItem="fEP-17-lvI" secondAttribute="bottom" constant="68" id="JJQ-3E-uq5"/>
+                            <constraint firstAttribute="trailing" secondItem="ltH-Rh-QKH" secondAttribute="trailing" id="Mda-2F-tbA"/>
+                            <constraint firstItem="fEP-17-lvI" firstAttribute="leading" secondItem="UBM-cc-9aS" secondAttribute="leading" id="Xbc-Yh-onV"/>
+                            <constraint firstItem="ltH-Rh-QKH" firstAttribute="leading" secondItem="UBM-cc-9aS" secondAttribute="leading" id="YEW-a6-jXq"/>
+                            <constraint firstItem="fEP-17-lvI" firstAttribute="top" secondItem="vQE-rg-TqX" secondAttribute="bottom" constant="168" id="aMT-vW-Yth"/>
                             <constraint firstItem="Fot-J8-K1b" firstAttribute="leading" secondItem="UBM-cc-9aS" secondAttribute="leading" id="dTB-Ty-ClZ"/>
-                            <constraint firstItem="fEP-17-lvI" firstAttribute="top" secondItem="vQE-rg-TqX" secondAttribute="bottom" constant="175" id="jeL-sU-at6"/>
-                            <constraint firstItem="ltH-Rh-QKH" firstAttribute="top" secondItem="fEP-17-lvI" secondAttribute="bottom" constant="58" id="lAS-yt-Hvo"/>
+                            <constraint firstAttribute="bottom" secondItem="Fot-J8-K1b" secondAttribute="bottom" id="hbc-Hq-4Ez"/>
+                            <constraint firstItem="mS1-sc-ZV1" firstAttribute="leading" secondItem="UBM-cc-9aS" secondAttribute="leading" id="so4-Uo-GsI"/>
                             <constraint firstAttribute="trailing" secondItem="Fot-J8-K1b" secondAttribute="trailing" id="uV9-sE-gHQ"/>
-                            <constraint firstItem="mS1-sc-ZV1" firstAttribute="top" secondItem="ltH-Rh-QKH" secondAttribute="bottom" constant="58" id="wcd-SS-rZq"/>
                             <constraint firstItem="Fot-J8-K1b" firstAttribute="top" secondItem="UBM-cc-9aS" secondAttribute="top" id="xiQ-Lh-NvT"/>
                         </constraints>
                     </view>
@@ -252,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shX-nl-LUY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4335" y="421"/>
+            <point key="canvasLocation" x="4333.6000000000004" y="419.64017991004499"/>
         </scene>
         <!--Detail Post View Controller-->
         <scene sceneID="gUn-Ct-d8p">
