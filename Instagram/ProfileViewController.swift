@@ -21,27 +21,18 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
     var username = ""
     var refreshControl: UIRefreshControl!
     var myProfilePicture : UIImage!
-    var myProfilePictureFile : PFFile!
-    let user = PFUser.current()
+//    var myProfilePictureFile : PFFile!
+//    let user = PFUser.current()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         currentUsernameLabel.text = PFUser.current()?.username as! String
         
-        
-//        var post = posts[0]
-//        
-//        let author = post["author"] as! PFUser
-//        profilePictureImageView.file = author["profilePicture"] as? PFFile
-//        profilePictureImageView.loadInBackground()
-
-        
-        
-        myProfilePictureFile = getPFFileFromImage(image: myProfilePicture)
-        profilePictureImageView.file = myProfilePictureFile
+        let user = PFUser.current()!
+        profilePictureImageView.file = user["profilePicture"] as? PFFile
         profilePictureImageView.loadInBackground()
-        //this is not working
+        
         
         
         postsCollectionView.dataSource = self
@@ -97,6 +88,10 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        fetchPosts()
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return posts.count
     }
@@ -108,16 +103,6 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
         let image = post["media"] as! PFFile
         cell.postImageView.file = image
         cell.postImageView.loadInBackground()
-        
-        /*
-         
-         let author = post["author"] as! PFUser
-         
-         print (image.url)
-         
-         cell.captionLabel.text = caption
-         cell.usernameLabel.text = author.username
-         */
         
         return cell
     }
@@ -134,7 +119,6 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
     
     
     func fetchPosts() {
-        // Add code to be run periodically
         let query = PFQuery(className: "Post")
         query.addDescendingOrder("createdAt")
         query.includeKey("author")
@@ -148,6 +132,11 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
                 self.userPosts = posts
                 
                 self.postsCollectionView.reloadData()
+                
+                let user = PFUser.current()!
+                self.profilePictureImageView.file = user["profilePicture"] as? PFFile
+                self.profilePictureImageView.loadInBackground()
+                
             } else {
                 print(error?.localizedDescription as? String)
             }
